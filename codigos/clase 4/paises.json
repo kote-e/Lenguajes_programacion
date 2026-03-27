@@ -1,0 +1,72 @@
+[
+    {
+        "pais": "Argentina",
+        "copas_america": 15,
+        "globos_de_oro": 8,
+        "mejor_arquero": 3,
+        "participaciones_mundial": 18
+    },
+    {
+        "pais": "Brasil",
+        "copas_america": 9,
+        "globos_de_oro": 5,
+        "mejor_arquero": 2,
+        "participaciones_mundial": 22
+    },
+    {
+        "pais": "Uruguay",
+        "copas_america": 15,
+        "globos_de_oro": 0,
+        "mejor_arquero": 0,
+        "participaciones_mundial": 14
+    },
+    {
+        "pais": "Chile",
+        "copas_america": 2,
+        "globos_de_oro": 0,
+        "mejor_arquero": 1,
+        "participaciones_mundial": 9
+    },
+    {
+        "pais": "Colombia",
+        "copas_america": 1,
+        "globos_de_oro": 0,
+        "mejor_arquero": 0,
+        "participaciones_mundial": 6
+    },
+    {
+        "pais": "Perú",
+        "copas_america": 2,
+        "globos_de_oro": 0,
+        "mejor_arquero": 0,
+        "participaciones_mundial": 5
+    },
+    {
+        "pais": "Paraguay",
+        "copas_america": 2,
+        "globos_de_oro": 0,
+        "mejor_arquero": 1,
+        "participaciones_mundial": 8
+    },
+    {
+        "pais": "Ecuador",
+        "copas_america": 0,
+        "globos_de_oro": 0,
+        "mejor_arquero": 0,
+        "participaciones_mundial": 4
+    },
+    {
+        "pais": "Bolivia",
+        "copas_america": 1,
+        "globos_de_oro": 0,
+        "mejor_arquero": 0,
+        "participaciones_mundial": 3
+    },
+    {
+        "pais": "Venezuela",
+        "copas_america": 0,
+        "globos_de_oro": 0,
+        "mejor_arquero": 0,
+        "participaciones_mundial": 0
+    }
+]
