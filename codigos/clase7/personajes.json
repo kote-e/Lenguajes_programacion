@@ -1,0 +1,152 @@
+[
+  {
+    "nombre": "Leroy Jenkins",
+    "energia": 100,
+    "tolerancia": 20,
+    "dinero": 150
+  },
+  {
+    "nombre": "Master Chief",
+    "energia": 95,
+    "tolerancia": 90,
+    "dinero": 5000
+  },
+  {
+    "nombre": "Samus Aran",
+    "energia": 88,
+    "tolerancia": 85,
+    "dinero": 4300
+  },
+  {
+    "nombre": "Geralt de Rivia",
+    "energia": 75,
+    "tolerancia": 95,
+    "dinero": 1200
+  },
+  {
+    "nombre": "Doom Slayer",
+    "energia": 98,
+    "tolerancia": 70,
+    "dinero": 2000
+  },
+  {
+    "nombre": "GLaDOS",
+    "energia": 60,
+    "tolerancia": 100,
+    "dinero": 9000
+  },
+  {
+    "nombre": "Sephiroth",
+    "energia": 80,
+    "tolerancia": 40,
+    "dinero": 7000
+  },
+  {
+    "nombre": "Commander Shepard",
+    "energia": 85,
+    "tolerancia": 92,
+    "dinero": 6000
+  },
+  {
+    "nombre": "Cloud Strife",
+    "energia": 78,
+    "tolerancia": 65,
+    "dinero": 3200
+  },
+  {
+    "nombre": "Darth Vader",
+    "energia": 90,
+    "tolerancia": 75,
+    "dinero": 8500
+  },
+  {
+    "nombre": "Link",
+    "energia": 82,
+    "tolerancia": 80,
+    "dinero": 1500
+  },
+  {
+    "nombre": "Mario",
+    "energia": 70,
+    "tolerancia": 95,
+    "dinero": 2500
+  },
+  {
+    "nombre": "Solid Snake",
+    "energia": 83,
+    "tolerancia": 88,
+    "dinero": 3900
+  },
+  {
+    "nombre": "Kratos",
+    "energia": 92,
+    "tolerancia": 60,
+    "dinero": 1800
+  },
+  {
+    "nombre": "Aloy",
+    "energia": 79,
+    "tolerancia": 85,
+    "dinero": 3100
+  },
+  {
+    "nombre": "Jill Valentine",
+    "energia": 76,
+    "tolerancia": 90,
+    "dinero": 2200
+  },
+  {
+    "nombre": "Gordon Freeman",
+    "energia": 74,
+    "tolerancia": 97,
+    "dinero": 4700
+  },
+  {
+    "nombre": "Tifa Lockhart",
+    "energia": 81,
+    "tolerancia": 78,
+    "dinero": 2800
+  },
+  {
+    "nombre": "Ezio Auditore",
+    "energia": 84,
+    "tolerancia": 82,
+    "dinero": 4100
+  },
+  {
+    "nombre": "Cortana",
+    "energia": 55,
+    "tolerancia": 100,
+    "dinero": 9500
+  },
+  {
+    "nombre": "Mega Man",
+    "energia": 73,
+    "tolerancia": 89,
+    "dinero": 1700
+  },
+  {
+    "nombre": "Ellie (The Last of Us)",
+    "energia": 68,
+    "tolerancia": 96,
+    "dinero": 1300
+  },
+  {
+    "nombre": "John Wick",
+    "energia": 87,
+    "tolerancia": 65,
+    "dinero": 9800
+  },
+  {
+    "nombre": "Ripley (Alien)",
+    "energia": 69,
+    "tolerancia": 93,
+    "dinero": 2100
+  },
+  {
+    "nombre": "Neo",
+    "energia": 91,
+    "tolerancia": 88,
+    "dinero": 8700
+  }
+]
