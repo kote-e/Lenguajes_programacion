@@ -12,4 +12,3 @@ class Tortuga:
         self.nombre = nombre
         self.velocidad = velocidad
         self.frase = frase
-

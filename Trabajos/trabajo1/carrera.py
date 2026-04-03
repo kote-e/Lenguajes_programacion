@@ -19,7 +19,7 @@ seleccionados= sample(todas, 10)
 
 for t in seleccionados:
     tortuga = Tortuga()
-    tortuga.crear_tortuga(t["nombre"], randint(1, 10), t["frase"])
+    tortuga.crear_tortuga(t["nombre"], randint(1, 4), t["frase"])
     tortugas.append(tortuga)
 
 print(f"las tortugas que correran son:")
@@ -41,12 +41,17 @@ while apuesta > dinero_total:
     apuesta = int(input("¿Cuánto quieres apostar en esta carrera?: "))
 
 #carrera
+print(f"\n{Fore.CYAN}🏁 ¡Comienza la carrera! 🏁{Style.RESET_ALL}\n")
+
+
 
 #ganaores
-ganador= choice(tortugas)
+ganador= choice(tortugas) # solo para confirmar que el sistema de apuestas funciona :)
 print(f"¡La carrera ha terminado! El ganador es: {ganador.nombre}")
 print(Style.BRIGHT + Fore.YELLOW + f"{ganador.nombre}: "+ Style.RESET_ALL + f"{ganador.frase}" )
-if ganador == apuesta:
+if ganador.nombre == elegida:
     print(Style.BRIGHT + Fore.GREEN+ f"¡Felicidades! {elegida} ha ganado. Tu nueva cantidad de dinero es: {dinero_total + apuesta}" + Style.RESET_ALL)
+    dinero_total += apuesta
 else:
     print(Style.BRIGHT + Fore.RED + f"Lo siento, {elegida} no ha ganado. Tu nueva cantidad de dinero es: {dinero_total - apuesta}" + Style.RESET_ALL)
+    dinero_total -= apuesta
