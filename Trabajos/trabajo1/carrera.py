@@ -65,8 +65,11 @@ numero = 0
 while not alguien_gano:
     numero+= 1
     posiciones = []
+    print(f"{Style.BRIGHT + Fore.CYAN}--- VUELTA {numero} ---{Style.RESET_ALL}\n")
 
     for t in tortugas:
+        
+        
         if t.avanza: #revisa si se catapulta o no o si tiene un mal viaje, si no tiene ninguno de esos eventos avanza normalmente
             t.velocidad = randint(1, 4)  # la tortuga avanza una distancia aleatoria basada en su velocidad
             t.distancia_recorrida += t.velocidad
@@ -74,7 +77,9 @@ while not alguien_gano:
             t.si_no_abanza-= 1
             if t.si_no_abanza <= 0:
                 t.avanza= True
-        posiciones.append(t)       
+        posiciones.append(t)    
+
+        
             
     posiciones.sort(key=lambda x: x.distancia_recorrida, reverse=True)
     for i in posiciones:
@@ -116,18 +121,23 @@ while not alguien_gano:
                 pass
             time.sleep(0.1)
 
+    for t in posiciones:
+        progreso = int(t.distancia_recorrida / 20) # cada 20 metros es un bloque en la barra de progreso
+        barrita = "█" * progreso + "-" * (50 - progreso)
+        color = Fore.GREEN if t.nombre == elegida else Fore.WHITE
+        print(f"{color}{t.nombre.ljust(20)} |{barrita}| {t.distancia_recorrida}m{Style.RESET_ALL}")
+
 
     if posiciones[0].distancia_recorrida >= 1000:
         alguien_gano = True
         ganador = posiciones[0]
     time.sleep(0.2)
-    print("\n" + Style.BRIGHT + Fore.CYAN + f"{"-" * 10} vuelta {numero} {"-" * 10} " + Style.RESET_ALL)
+print("_" * 50)
 
 
 
 #ganaores
 #ganador= choice(tortugas) # solo para confirmar que el sistema de apuestas funciona :)
-
 
 print(f"\n¡La carrera ha terminado! El ganador es: {ganador.nombre}")
 print(Style.BRIGHT + Fore.YELLOW + f"{ganador.nombre}: "+ Style.RESET_ALL + f"{ganador.frase_ganador}" )
@@ -142,13 +152,13 @@ for i in enumerate(posiciones[:10]):
     else:
         print(f"{i[0]+1}. {i[1].nombre} recorrio: {i[1].distancia_recorrida} metros: {i[1].frase_perdedor}")
 
-
+print("\n" + "_" * 50 + "\n")
 
 if ganador.nombre == elegida:
     dinero_total += apuesta
-    print(Style.BRIGHT + Fore.GREEN+ f"¡Felicidades! {elegida.strip()} ha ganado. Tu nueva cantidad de dinero es: {dinero_total}" + Style.RESET_ALL)
+    print(Style.BRIGHT + Fore.GREEN+ f"¡Felicidades! {elegida.strip()} ha ganado. Tu nueva cantidad de dinero es: {dinero_total}\n" + Style.RESET_ALL)
     
 else:
     dinero_total -= apuesta
-    print(Style.BRIGHT + Fore.RED + f"Lo siento, {elegida.strip()} no ha ganado. Tu nueva cantidad de dinero es: {dinero_total}" + Style.RESET_ALL)
+    print(Style.BRIGHT + Fore.RED + f"Lo siento, {elegida.strip()} no ha ganado. Tu nueva cantidad de dinero es: {dinero_total}\n" + Style.RESET_ALL)
     
