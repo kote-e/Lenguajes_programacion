@@ -1,14 +1,15 @@
-#importaciones
+#holi, algunos comentarios los escribo yo y otros se los dejo a copilot, espero que no se note la diferencia :3 
+#importaciones 
 import json
 from random import choice, randint, sample  
 from tortuga import Tortuga
 
-# solo para pñoner colores en la terminal :3
-from colorama import Fore, Style, init
+# coasa no necesarias pero quiero que se vea mas bonito :3 y por que estoy aburrida y no tengo nada que hacer
+from colorama import Fore, Style, init # solo para poner colores en la terminal :3
 init()
-
-from pick import pick #para que el sistema de apuesta sea mas bkn y no tenga que escribir el nombre de la tortuga por que estoy aburrida y no tengo nada que hacer
+from pick import pick #para que el sistema de apuesta sea mas bkn y no tenga que escribir el nombre de la tortuga 
 import os # para limpiar la terminal entre cada turno y que se vea mas dinamico
+import time # para poner un pequeño delay entre cada turno y que se vea mas dinamico
 
 
 # sacar los nombres de las tortugas del archivo json
@@ -39,7 +40,6 @@ for t in tortugas:
 
 #sistema de apuesta
 
-os.system('cls' if os.name == 'nt' else 'clear') 
 
 opciones = [t.nombre for t in tortugas]
 titulo = "¿En qué tortuga quieres apostar: ?"
@@ -61,19 +61,20 @@ while apuesta > dinero_total:
 #carrera
 print(f"\n{Style.BRIGHT + Fore.CYAN}🏁 ¡Comienza la carrera! 🏁{Style.RESET_ALL}\n")
 alguien_gano = False
+numero = 0
 while not alguien_gano:
+    numero+= 1
     posiciones = []
 
     for t in tortugas:
         if t.avanza: #revisa si se catapulta o no o si tiene un mal viaje, si no tiene ninguno de esos eventos avanza normalmente
             t.velocidad = randint(1, 4)  # la tortuga avanza una distancia aleatoria basada en su velocidad
             t.distancia_recorrida += t.velocidad
-            posiciones.append(t)
         else:
             t.si_no_abanza-= 1
             if t.si_no_abanza <= 0:
                 t.avanza= True
-                
+        posiciones.append(t)       
             
     posiciones.sort(key=lambda x: x.distancia_recorrida, reverse=True)
     for i in posiciones:
@@ -113,10 +114,14 @@ while not alguien_gano:
                     print(Style.BRIGHT + Fore.GREEN + f"¡{t.nombre} comio un hongo, pero paso un bad time! Se desmaya y no avanza durante 4 turnos!" + Style.RESET_ALL)
             else:
                 pass
+            time.sleep(0.1)
+
 
     if posiciones[0].distancia_recorrida >= 1000:
         alguien_gano = True
         ganador = posiciones[0]
+    time.sleep(0.2)
+    print("\n" + Style.BRIGHT + Fore.CYAN + f"{"-" * 10} vuelta {numero} {"-" * 10} " + Style.RESET_ALL)
 
 
 
