@@ -7,8 +7,10 @@ class Tortuga:
         self.posicion_carrera = 0
         self.distancia_recorrida = 0
         self.frase = ""
+        self.avanza= True
+        self.si_no_abanza= 0
 
-    def crear_tortuga(self, nombre, velocidad, frase):
+    def crear_tortuga(self, nombre, frase):
         self.nombre = nombre
-        self.velocidad = velocidad
         self.frase = frase
+
