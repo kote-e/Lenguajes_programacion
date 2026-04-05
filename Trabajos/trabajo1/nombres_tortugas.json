@@ -1,24 +1,46 @@
-{
-  "tortugas": [
-    {"nombre": "Alice Liddell", "frase": "Este mundo esta completamente loco…" },
-    { "nombre": "Mordecaiser", "frase": "Yo decido quien gana." },
-    { "nombre": "Little Misfortune", "frase": "Yay! Gane… ¿eso significa que soy feliz ahora?" },
-    { "nombre": "Samus", "frase": "Mision cumplida." },
-    { "nombre": "Leon", "frase": "Esto fue demasiado facil." },
-    { "nombre": "Cassie", "frase": "Siempre supe que podia." },
-    { "nombre": "Buu", "frase": "Buu gana! Buu feliz!" },
-    { "nombre": "Cream", "frase": "¡Lo logre con todo mi esfuerzo!"},
-    { "nombre": "James", "frase": "¡El Team Rocket gana otra vez!" },
-    { "nombre": "Knuckles", "frase": "Fuerza pura." },
-    { "nombre": "Pit", "frase": "¡Victoria para los cielos!" },
-    { "nombre": "Dedede", "frase": "El rey siempre gana." },
-    { "nombre": "Froggit", "frase": "Ribbit… gane." },
-    { "nombre": "Napstablook", "frase": "...oh, gane supongo..." },
-    { "nombre": "Squigly", "frase": "Elegancia ante todo." },
-    { "nombre": "Black Dahlia", "frase": "Nunca dude." },
-    { "nombre": "Frieren", "frase": "Fue un viaje corto." },
-    { "nombre": "MaoMao", "frase": "Interesante resultado." },
-    { "nombre": "Gengar", "frase": "Jeje, te lo dije." },
-    { "nombre": "javi<3", "frase": "Soy el mejor ayudante. xddd" }
+{   "tortugas": [
+    {"nombre": "Alice Liddell", "frase_ganador": "Este mundo esta completamente loco… pero gane.", "frase_top3": "Supongo que no todo fue tan extraño.", "frase_perdedor": "Quizas nunca entendi las reglas de este mundo…"},
+
+    {"nombre": "Mordecaiser", "frase_ganador": "Yo decido quien gana.", "frase_top3": "Aun no es mi verdadero poder.", "frase_perdedor": "Esto no ha terminado."},
+
+    {"nombre": "Little Misfortune", "frase_ganador": "Yay! Gane… ¿eso significa que soy feliz ahora?", "frase_top3": "Estuvo bien… creo.", "frase_perdedor": "Oh… no gane… pero igual fue divertido."},
+
+    {"nombre": "Samus", "frase_ganador": "Mision cumplida.", "frase_top3": "Objetivo casi completado.", "frase_perdedor": "Necesito mejorar mi estrategia."},
+
+    {"nombre": "Leon", "frase_ganador": "Esto fue demasiado facil.", "frase_top3": "Nada mal.", "frase_perdedor": "Debo estar perdiendo practica."},
+
+    {"nombre": "Cassie", "frase_ganador": "Siempre supe que podia.", "frase_top3": "Voy por mas la proxima.", "frase_perdedor": "Ok… eso no salio como esperaba."},
+
+    {"nombre": "Buu", "frase_ganador": "Buu gana! Buu feliz!", "frase_top3": "Buu casi gana!", "frase_perdedor": "Buu triste…"},
+
+    {"nombre": "Cream", "frase_ganador": "¡Lo logre con todo mi esfuerzo!", "frase_top3": "¡Hice lo mejor que pude!", "frase_perdedor": "Lo intentare otra vez..."},
+
+    {"nombre": "James", "frase_ganador": "¡El Team Rocket gana otra vez!", "frase_top3": "Casi lo logramos…", "frase_perdedor": "¡El Team Rocket despega de nuevo!"},
+
+    {"nombre": "Knuckles", "frase_ganador": "Fuerza pura.", "frase_top3": "Nada mal.", "frase_perdedor": "Tch…"},
+
+    {"nombre": "Pit", "frase_ganador": "¡Victoria para los cielos!", "frase_top3": "¡Nada mal!", "frase_perdedor": "Lo siento, Lady Palutena…"},
+
+    {"nombre": "Dedede", "frase_ganador": "El rey siempre gana.", "frase_top3": "Igual sigo siendo el rey.", "frase_perdedor": "¡Esto es un ultraje!"},
+
+    {"nombre": "Froggit", "frase_ganador": "Ribbit… gane.", "frase_top3": "Ribbit… no esta mal.", "frase_perdedor": "Ribbit…"},
+
+    {"nombre": "Napstablook", "frase_ganador": "...oh, gane supongo...", "frase_top3": "...esto esta bien...", "frase_perdedor": "...como siempre..."},
+
+    {"nombre": "Squigly", "frase_ganador": "Elegancia ante todo.", "frase_top3": "Un resultado digno.", "frase_perdedor": "No fue mi mejor actuacion."},
+
+    {"nombre": "Black Dahlia", "frase_ganador": "Nunca dude.", "frase_top3": "Casi perfecto.", "frase_perdedor": "Interesante…"},
+
+    {"nombre": "Frieren", "frase_ganador": "Fue un viaje corto.", "frase_top3": "Nada fuera de lo normal.", "frase_perdedor": "He vivido derrotas peores."},
+
+    {"nombre": "MaoMao", "frase_ganador": "Interesante resultado.", "frase_top3": "Curioso…", "frase_perdedor": "Necesito analizar esto."},
+
+    {"nombre": "Gengar", "frase_ganador": "Jeje, te lo dije.", "frase_top3": "Casi gano…", "frase_perdedor": "Je… esto no cuenta."},
+
+    {"nombre": "javi<3", "frase_ganador": "Soy el mejor ayudante. xddd", "frase_top3": "Hay que imaginar a sisifo feliz.", "frase_perdedor": "Cuendo me pagan?"},
+
+    {"nombre": "Sub-Zero", "frase_ganador": "La victoria es fria… como el hielo.", "frase_top3": "Mi poder sigue creciendo.", "frase_perdedor": "Esto no terminara asi."},
+
+    {"nombre":"Profe Hector", "frase_ganador": "Soy una mezcla del ziggs y el Fliqpy", "frase_top3": "Cual es la mejor cancion de metalica?", "frase_perdedor": "Tengo el cetro :("}
   ]
 }
