@@ -2,6 +2,8 @@
 
 Repositorio correspondiente al ramo **Lenguajes de Programación**.
 
-## 📌 Descripción
+## Este repositorio contiene:
 
-Este proyecto tiene como objetivo implementar y analizar conceptos fundamentales del curso
+- Notebooks con teoría y ejemplos prácticos
+- Experimentos en Python
+- Implementaciones realizadas durante el semestre

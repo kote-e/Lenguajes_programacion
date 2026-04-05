@@ -35,5 +35,3 @@ print(alfabeticamente)
 
 feuerte=max(heroes, key=lambda z: z.fuerza + z.agilidad)
 print(feuerte)
-
-
