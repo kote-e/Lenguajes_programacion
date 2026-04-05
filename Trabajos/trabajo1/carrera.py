@@ -7,6 +7,9 @@ from tortuga import Tortuga
 from colorama import Fore, Style, init
 init()
 
+from pick import pick #para que el sistema de apuesta sea mas bkn y no tenga que escribir el nombre de la tortuga por que estoy aburrida y no tengo nada que hacer
+import os # para limpiar la terminal entre cada turno y que se vea mas dinamico
+
 
 # sacar los nombres de las tortugas del archivo json
 with open("nombres_tortugas.json", "r") as f:
@@ -24,16 +27,31 @@ for t in seleccionados:
     tortuga = Tortuga()
     tortuga.crear_tortuga(t["nombre"], t["frase_ganador"], t["frase_top3"], t["frase_perdedor"])
     tortugas.append(tortuga)
+
+# print(f"las tortugas que correran son:")
+# for t in tortugas:
+#     print(Style.BRIGHT + Fore.MAGENTA + f"- "+ Style.RESET_ALL + f"{t.nombre}")
+    
+
 print(f"las tortugas que correran son:")
 for t in tortugas:
     print(Style.BRIGHT + Fore.MAGENTA + f"- "+ Style.RESET_ALL + f"{t.nombre}")
-    
 
 #sistema de apuesta
-elegida= input("¿En qué tortuga quieres apostar?: ")
-while elegida.strip().lower() not in [t.nombre.lower() for t in tortugas]:
-    print("Tortuga no válida. Por favor, elige una tortuga de la lista.")
-    elegida = input("¿En qué tortuga quieres apostar?: ")
+
+os.system('cls' if os.name == 'nt' else 'clear') 
+
+opciones = [t.nombre for t in tortugas]
+titulo = "¿En qué tortuga quieres apostar: ?"
+opcion_seleccionada, index = pick(opciones, titulo, indicator=  "=>", default_index=0)
+elegida = opcion_seleccionada
+print(f"Has seleccionado a: {Style.BRIGHT + Fore.GREEN}{elegida}{Style.RESET_ALL}\n")
+
+
+# elegida= input("¿En qué tortuga quieres apostar?: ")
+# while elegida.strip().lower() not in [t.nombre.lower() for t in tortugas]:
+#     print("Tortuga no válida. Por favor, elige una tortuga de la lista.")
+#     elegida = input("¿En qué tortuga quieres apostar?: ")
 
 apuesta = int(input("¿Cuánto quieres apostar en esta carrera?: "))
 while apuesta > dinero_total:
@@ -52,7 +70,7 @@ while not alguien_gano:
             t.distancia_recorrida += t.velocidad
             posiciones.append(t)
         else:
-            t.si_no_abanza= -1
+            t.si_no_abanza-= 1
             if t.si_no_abanza <= 0:
                 t.avanza= True
                 
@@ -63,7 +81,7 @@ while not alguien_gano:
     
     #eventos aleatorios
     for t in posiciones:
-        if randint(1, 100) <= 6:  # 6% de probabilidad de que ocurra un evento
+        if randint(1, 100) <= 7:  # 7% de probabilidad de que ocurra un evento
             evento= choice(["aji", "alas", "burocracia", "catapulta", "hongo"])
             if evento == "aji":
                 t.distancia_recorrida += 5
@@ -73,11 +91,10 @@ while not alguien_gano:
                     t.distancia_recorrida += 10
                     print(Style.BRIGHT + Fore.CYAN + f"¡{t.nombre} usa alas de ángel y avanza 10 metros extra!" + Style.RESET_ALL)
                 else:
-                    delante = delante = posiciones[t.posicion_carrera - 2]
-                    if delante.posicion_carrera == t.posicion_carrera-1:
-                        t.distancia_recorrida = delante.distancia_recorrida + 1
-                        print(Style.BRIGHT + Fore.CYAN + f"¡{t.nombre} usa alas de ángel y adelanta a {delante.nombre}!" + Style.RESET_ALL)
-                        break
+                    indice_actual = posiciones.index(t)
+                    tortuga_adelante = posiciones[indice_actual - 1]
+                    t.distancia_recorrida = tortuga_adelante.distancia_recorrida + 1
+                    print(Style.BRIGHT + Fore.CYAN + f"¡{t.nombre} usa alas de ángel y adelanta a {tortuga_adelante.nombre}!" + Style.RESET_ALL)
             elif evento == "burocracia":
                 t.distancia_recorrida -= t.velocidad
                 print(Style.BRIGHT + Fore.YELLOW + f"¡{t.nombre} esta en Firma burocratica y no avanza!" + Style.RESET_ALL)
