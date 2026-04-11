@@ -45,12 +45,12 @@
 
     {"nombre": "Gwen", "frase_ganador": "Todo esta bajo control.", "frase_top3": "Aun puedo mejorar.", "frase_perdedor": "Hmph... esto no estaba en mis calculos."},
 
-    {"nombre": "javi<3", "frase_ganador": "Soy el mejor ayudante. xddd", "frase_top3": "Hay que imaginar a sisifo feliz.", "frase_perdedor": "Cuando me pagan?"},
+    {"nombre": "javi<3", "frase_ganador": "Soy el mejor ayudante. xddd", "frase_top3": "Hay que imaginar a sisifo feliz.", "frase_perdedor": "No me pagan lo suficiente."},
 
     {"nombre": "Sub-Zero", "frase_ganador": "La victoria es fria... como el hielo.", "frase_top3": "Mi poder sigue creciendo.", "frase_perdedor": "Esto no terminara asi."},
 
-    {"nombre":"Profe Alonso", "frase_ganador": "Soy una mezcla del ziggs y el Fliqpy", "frase_top3": "Cual es la mejor cancion de metalica?", "frase_perdedor": "Tengo el cetro :("}
+    {"nombre":"Profe Alonso", "frase_ganador": "Soy una mezcla del ziggs y el Fliqpy", "frase_top3": "Cual es la mejor cancion de metalica?", "frase_perdedor": "Tengo el cetro :("},
 
-    {"nombre": "Kote", "frase_ganador": "Como gane deberia ver Frieren.", "frase_top3": "Deberia mejorar el codigo para que solo pueda ganar yo", "frase_perdedor": "obiamente esto es un bug. "}
+    {"nombre": "Kote", "frase_ganador": "Como gane deberia ver Frieren.", "frase_top3": "Deberia mejorar el codigo para que solo pueda ganar yo", "frase_perdedor": "Esta bugeao"}
   ]
 }
