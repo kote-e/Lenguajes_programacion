@@ -21,8 +21,19 @@ with open("nombres_tortugas.json", "r") as f:
 
 #print(tortugas)
 print(Style.BRIGHT + Fore.CYAN + f"¡Bienvenido a la carrera de tortugas!" + Style.RESET_ALL)
-dinero_total= int(input("¿Cuánto dinero tienes para apostar?: ")) # para que el usuario pueda apostar, y se le vaya restando o sumando dependiendo de si gana o pierde la apuesta.
 
+#preguntar al usuario cuanto dinero tiene para apostar, y revisar que sea un numero valido y mayor a 0
+while True:
+    try:
+        dinero_total = int(input("¿Cuánto dinero tienes para apostar?: ")) # para que el usuario pueda apostar, y se le vaya restando o sumando dependiendo de si gana o pierde la apuesta.
+        if dinero_total <= 0:
+            print("Debe ser mayor a 0.")
+            continue
+        break
+    except ValueError:
+        print("Ingresa un número válido.")
+ 
+# ciclo principal del juego, se repite hasta que el usuario decida salir o se quede sin dinero para apostar
 puedes_seguir_jugando = True
 while puedes_seguir_jugando:
 
@@ -76,7 +87,6 @@ while puedes_seguir_jugando:
 
         for t in tortugas:
             
-            
             if t.avanza: #revisa si se catapulta o no o si tiene un mal viaje, si no tiene ninguno de esos eventos avanza normalmente
                 rng = random.SystemRandom() # para que la velocidad sea mas impredecible 
                 t.velocidad = rng.randint(1, 4)  # la tortuga avanza una distancia aleatoria basada en su velocidad
@@ -87,9 +97,8 @@ while puedes_seguir_jugando:
                     t.avanza= True
             posiciones.append(t)    
 
-            
-                
-        posiciones.sort(key=lambda x: x.distancia_recorrida, reverse=True)
+        #ordenar las tortugas por distancia recorrida, y asignarles su posicion en la carrera
+        posiciones.sort(key=lambda x: x.distancia_recorrida, reverse=True)# ordena las tortugas por distancia recorrida, de mayor a menor, para determinar su posición en la carrera
         for i in posiciones:
             i.posicion_carrera= posiciones.index(i) + 1
         
