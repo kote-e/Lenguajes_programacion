@@ -34,6 +34,16 @@ class Tablero:
         self._grid[fila][col] = pieza
         pieza._fila = fila
         pieza._col  = col
+    
+    def mover_pieza(self, pieza, fila_destino, col_destino):
+        if (fila_destino, col_destino) in pieza.movimientos_posibles(self):
+            self._grid[pieza._fila][pieza._col] = None  # quitar de la posición actual
+            self.colorcar_pieza(pieza, fila_destino, col_destino)
+        else:
+            print("Movimiento no válido para esa pieza.")
+    
+    def obtener_pieza(self, fila, col):
+        return self._grid[fila][col]
 
     def imprimir(self):
         letras = "abcdefghijklmnopqrstuvwxyz"
