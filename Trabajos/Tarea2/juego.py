@@ -1,3 +1,4 @@
+# importar las clases necesarias para el juego
 from Tablero import Tablero
 from Peon import Peon
 from Torre import Torre
@@ -38,8 +39,6 @@ from Rey import Rey
 # tablero.colorcar_pieza(reina_negra1, fila=0, col=3)
 # tablero.imprimir()
 
-
-
 # print("Movimientos posibles:")
 
 # tablero.mostrar_movimientos(peon_blanco1)
@@ -53,6 +52,19 @@ from Rey import Rey
 # tablero.mostrar_movimientos(reina_blanca1)
 # tablero.mostrar_movimientos(reina_negra1)
 #tablero.imprimir()
+
+def comprobar(pieza, color):
+    if pieza is None:
+        print("¡No hay ninguna pieza en esa posición! Intenta de nuevo.")
+        return False
+    elif pieza.color != color:
+        print(f"¡Esa no es una pieza {color}! Intenta de nuevo.")
+        return False
+    elif not pieza.movimientos_posibles(tablero):
+        print("¡Esa pieza no tiene movimientos posibles! Intenta de nuevo.")
+        return False
+    else:
+        return True
 
 print("\033[1;3;35m ¡¡Inicio del juego!!  \033[0m")
 
@@ -91,20 +103,52 @@ jugar= True
 while jugar:
     if turno_actual % 2 == 0:
         print("\033[1;3;35m Turno de las piezas blancas!!  \033[0m")
-        mover = input("Ingrese la pieza: ") 
-        columna = ord(mover[0].lower()) - ord('a')
-        fila =  int(mover[1])
-        pieza = tablero.obtener_pieza(fila, columna)
+        comprovar=True
+        while comprovar:
+            mover = input("Ingrese la pieza que quiere mover ejemplo (a6): ")
+            mover = mover.strip()
+            columna = ord(mover[0].lower()) - ord('a')
+            fila = tablero._fila - int(mover[1:])
+            #print(f"Columna: {columna}, Fila: {fila}")
+            if columna < 0 or columna >= tablero._columna or fila < 0 or fila >= tablero._fila:
+                print("¡Posición fuera de los límites del tablero! Intenta de nuevo.")
+                continue
+
+            pieza = tablero.obtener_pieza(fila, columna)
+            if comprobar(pieza, "blanco"):
+                comprovar=False
+            else:
+                print("Intenta de nuevo.")
+        
         tablero.mostrar_movimientos(pieza)
-
-
         destino = input("Ingrese la posición de destino: ")
         col_destino = ord(destino[0].lower()) - ord('a')
         fila_destino = int(destino[1])
+
         tablero.mover_pieza(pieza, fila_destino, col_destino)
         tablero.imprimir()
 
     else:
         print("\033[1;3;35m Turno de las piezas negras!!  \033[0m")
 
+        comprovar=True
+        while comprovar:
+            mover = input("Ingrese la pieza que quiere mover ejemplo (a6): ") 
+            columna = ord(mover[0].lower()) - ord('a')
+            fila = tablero._fila - int(mover[1])
+            print(f"Columna: {columna}, Fila: {fila}")
+
+            pieza = tablero.obtener_pieza(fila, columna)
+            if comprobar(pieza, "negro"):
+                comprovar=False
+            else:
+                print("Intenta de nuevo.")
+        
+        tablero.mostrar_movimientos(pieza)
+        destino = input("Ingrese la posición de destino: ")
+        col_destino = ord(destino[0].lower()) - ord('a')
+        fila_destino = int(destino[1])
+        
+        tablero.mover_pieza(pieza, fila_destino, col_destino)
+        tablero.imprimir()
     turno_actual += 1
