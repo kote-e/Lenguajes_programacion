@@ -3,6 +3,7 @@ class Torre:
         self._fila = None
         self._col = None
         self.color = color
+        self.estado = "activo"
 
     def __str__(self):
         return "♖" if self.color == "blanco" else "♜"

@@ -2,6 +2,7 @@ class Caballo:
     def __init__(self, color):
         self.color = color
         self._movido = False
+        self.estado = "activo"
 
     def __str__(self):
         return "♘" if self.color == "blanco" else "♞"

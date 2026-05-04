@@ -4,6 +4,7 @@ class Peon:
         self._col = None
         self.color = color
         self._movido = False
+        self.estado = "activo"
         # self.id = id
 
 
