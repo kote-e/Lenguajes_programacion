@@ -22,3 +22,6 @@ class Rey:
                     if tablero.celda_libre(nf, nc) or tablero.hay_enemigo(nf, nc, self.color):
                         movs.append((nf, nc))
         return movs
+    
+    def obtener_rey(self):
+        return (self._fila, self._col)

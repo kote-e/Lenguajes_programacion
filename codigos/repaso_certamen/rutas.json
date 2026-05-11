@@ -1,0 +1,182 @@
+[
+    {
+        "grado": "V0",
+        "energia": 2,
+        "tecnica": 20,
+        "fuerza": 30
+    },
+    {
+        "grado": "V1",
+        "energia": 8,
+        "tecnica": 25,
+        "fuerza": 32
+    },
+    {
+        "grado": "V2",
+        "energia": 14,
+        "tecnica": 36,
+        "fuerza": 34
+    },
+    {
+        "grado": "V2",
+        "energia": 15,
+        "tecnica": 36,
+        "fuerza": 34
+    },
+    {
+        "grado": "V3",
+        "energia": 21,
+        "tecnica": 43,
+        "fuerza": 38
+    },
+    {
+        "grado": "V3",
+        "energia": 23,
+        "tecnica": 39,
+        "fuerza": 38
+    },
+    {
+        "grado": "V3",
+        "energia": 23,
+        "tecnica": 42,
+        "fuerza": 38
+    },
+    {
+        "grado": "V3",
+        "energia": 21,
+        "tecnica": 44,
+        "fuerza": 38
+    },
+    {
+        "grado": "V4",
+        "energia": 27,
+        "tecnica": 47,
+        "fuerza": 42
+    },
+    {
+        "grado": "V4",
+        "energia": 29,
+        "tecnica": 49,
+        "fuerza": 42
+    },
+    {
+        "grado": "V4",
+        "energia": 27,
+        "tecnica": 53,
+        "fuerza": 42
+    },
+    {
+        "grado": "V4",
+        "energia": 30,
+        "tecnica": 52,
+        "fuerza": 42
+    },
+    {
+        "grado": "V5",
+        "energia": 37,
+        "tecnica": 57,
+        "fuerza": 46
+    },
+    {
+        "grado": "V5",
+        "energia": 37,
+        "tecnica": 56,
+        "fuerza": 46
+    },
+    {
+        "grado": "V5",
+        "energia": 39,
+        "tecnica": 54,
+        "fuerza": 46
+    },
+    {
+        "grado": "V5",
+        "energia": 35,
+        "tecnica": 58,
+        "fuerza": 46
+    },
+    {
+        "grado": "V5",
+        "energia": 34,
+        "tecnica": 57,
+        "fuerza": 46
+    },
+    {
+        "grado": "V6",
+        "energia": 44,
+        "tecnica": 62,
+        "fuerza": 50
+    },
+    {
+        "grado": "V6",
+        "energia": 43,
+        "tecnica": 63,
+        "fuerza": 50
+    },
+    {
+        "grado": "V6",
+        "energia": 44,
+        "tecnica": 62,
+        "fuerza": 50
+    },
+    {
+        "grado": "V6",
+        "energia": 40,
+        "tecnica": 65,
+        "fuerza": 50
+    },
+    {
+        "grado": "V6",
+        "energia": 41,
+        "tecnica": 66,
+        "fuerza": 50
+    },
+    {
+        "grado": "V7",
+        "energia": 47,
+        "tecnica": 70,
+        "fuerza": 56
+    },
+    {
+        "grado": "V7",
+        "energia": 48,
+        "tecnica": 75,
+        "fuerza": 56
+    },
+    {
+        "grado": "V7",
+        "energia": 47,
+        "tecnica": 71,
+        "fuerza": 56
+    },
+    {
+        "grado": "V7",
+        "energia": 49,
+        "tecnica": 72,
+        "fuerza": 56
+    },
+    {
+        "grado": "V8",
+        "energia": 57,
+        "tecnica": 83,
+        "fuerza": 60
+    },
+    {
+        "grado": "V8",
+        "energia": 56,
+        "tecnica": 83,
+        "fuerza": 60
+    },
+    {
+        "grado": "V9",
+        "energia": 62,
+        "tecnica": 86,
+        "fuerza": 64
+    },
+    {
+        "grado": "V10",
+        "energia": 70,
+        "tecnica": 95,
+        "fuerza": 68
+    }
+]

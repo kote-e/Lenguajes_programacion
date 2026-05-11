@@ -30,7 +30,7 @@ class Tablero:
     def celda_libre(self, fila, col):
         return self._grid[fila][col] is None
     
-    def colorcar_pieza(self, pieza, fila, col):
+    def colocar_pieza(self, pieza, fila, col):
         self._grid[fila][col] = pieza
         pieza._fila = fila
         pieza._col  = col
@@ -38,7 +38,7 @@ class Tablero:
     def mover_pieza(self, pieza, fila_destino, col_destino):
         if (fila_destino, col_destino) in pieza.movimientos_posibles(self):
             self._grid[pieza._fila][pieza._col] = None  # quitar de la posición actual
-            self.colorcar_pieza(pieza, fila_destino, col_destino)
+            self.colocar_pieza(pieza, fila_destino, col_destino)
         else:
             print("Movimiento no válido para esa pieza.")
     

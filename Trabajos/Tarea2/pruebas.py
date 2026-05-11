@@ -52,3 +52,24 @@ tablero.mostrar_movimientos(Caballo_negro1)
 tablero.mostrar_movimientos(reina_blanca1)
 tablero.mostrar_movimientos(reina_negra1)
 tablero.imprimir()
+
+def colocar_piesas_iniciales(tablero):
+    for i in range (8):
+        tablero.colorcar_pieza(Peon("blanco"), fila=6, col=i)
+        tablero.colorcar_pieza(Peon("negro"), fila=1, col=i)
+    for i in range(8):
+        if i == 0 or i == 7:
+            tablero.colorcar_pieza(Torre("blanco"), fila=7, col=i)
+            tablero.colorcar_pieza(Torre("negro"), fila=0, col=i)
+        elif i == 1 or i == 6:
+            tablero.colorcar_pieza(Caballo("blanco"), fila=7, col=i)
+            tablero.colorcar_pieza(Caballo("negro"), fila=0, col=i)
+        elif i == 2 or i == 5:
+            tablero.colorcar_pieza(Alfil("blanco"), fila=7, col=i)
+            tablero.colorcar_pieza(Alfil("negro"), fila=0, col=i)
+        elif i == 3:
+            tablero.colorcar_pieza(Reina("blanco"), fila=7, col=i)
+            tablero.colorcar_pieza(Reina("negro"), fila=0, col=i)
+        elif i == 4:
+            tablero.colorcar_pieza(Rey("blanco"), fila=7, col=i)
+            tablero.colorcar_pieza(Rey("negro"), fila=0, col=i)
