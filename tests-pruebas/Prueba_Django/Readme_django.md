@@ -147,20 +147,38 @@ Guarda todas las dependencias instaladas para que otros desarrolladores puedan r
 ``` pip freeze > requirements.txt```
 **Estructura básica**
 proyecto/
+
 │
+
 ├── manage.py
+
 ├── requirements.txt
+
 ├── db.sqlite3
+
 │
+
 ├── proyecto/
+
 │   ├── settings.py
+
 │   ├── urls.py
+
 │   ├── wsgi.py
+
 │   └── asgi.py
+
 │
+
 └── logica/
+
     ├── models.py
+
     ├── views.py
+
     ├── urls.py
+
     ├── admin.py
+
     └── migrations/
+    
