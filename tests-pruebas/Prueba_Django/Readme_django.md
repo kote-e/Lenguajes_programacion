@@ -3,13 +3,13 @@
 
 ### Crear entorno virtual:
 
-``` python -m venv venv ```
+``` python -m venv prueba ```
 
 ### Activar entorno virtual
 Windows (CMD)
-``` venv\Scripts\activate ```
+``` prueba\Scripts\activate ```
 Windows (PowerShell)
-``` .\venv\Scripts\Activate.ps1```
+``` .\prueba\Scripts\Activate.ps1```
 
 ### Desactivar entorno virtual
 ``` deactivate ```
