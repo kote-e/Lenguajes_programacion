@@ -3,8 +3,11 @@ import numpy as np
 
 def calcular_centro(esquinas):
     # Calcula el centro del marcador de ArUco a partir de sus esquinas
-    xc = int(np.mean(esquinas[:, 0]))
-    yc = int(np.mean(esquinas[:, 1]))
+    filas= esquinas[:, 0]
+    columnas = esquinas[:, 1]
+
+    xc = int(np.mean(filas)) #mean calcula el promedio de los valores
+    yc = int(np.mean(columnas))
     return (xc, yc)
 
 
@@ -34,10 +37,10 @@ while True:
             lista_numeros = ids.flatten().tolist()
             centro = calcular_centro(esquinas[i][0])
             centros[lista_numeros[i]] = centro
-        #print(centros)
+        print(centros)
     
 
-    
+
     cv2.imshow('Mi Camara', frame) #imagen de la camara
 
         
