@@ -32,7 +32,7 @@ marker_image = cv2.aruco.generateImageMarker(aruco_dict, marker_id, marker_size)
 
 
 
-cv2.imwrite("marker_42.png", marker_image)
+cv2.imwrite("aruco0.png", marker_image)
 cv2.imshow("Generated ArUco Marker", marker_image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

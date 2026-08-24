@@ -4,3 +4,4 @@ def calcular_centro(r1, r2, size):
     
     return (int(x_c), int(y_c))
 
+ 
