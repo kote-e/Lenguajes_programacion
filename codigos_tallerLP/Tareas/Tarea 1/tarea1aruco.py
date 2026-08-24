@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 
 def calcular_centro(esquinas):
-    # Calcula el centro del marcador de ArUco a partir de sus esquinas
     filas= esquinas[:, 0]
     columnas = esquinas[:, 1]
 
