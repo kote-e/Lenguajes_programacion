@@ -1,21 +1,28 @@
 import cv2
 import numpy as np
 
-# from comtypes import CLSCTX_ALL
-# from pycaw.pycaw import AudioUtilities, IAudioEndpointVolum
+from comtypes import CLSCTX_ALL
+from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 
-# ## Configurar control de volumen de Windows (PyCaw)
-# devices = AudioUtilities.GetSpeakers()
-# interface = devices.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
-# volume_control = interface.QueryInterface(IAudioEndpointVolume)
+# Configurar control de volumen de Windows (PyCaw) esto fue horrible, no sabia por que no funcionaba y le pregunte a gemini 
+# y me dijo que era por la version de pycaw
+devices = AudioUtilities.GetSpeakers()
+try: # PyCaw versión moderna (2.x+)
+    volume_control = devices.EndpointVolume
+except AttributeError: # PyCaw versión antigua (1.x)
+    interface = devices.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
+    volume_control = interface.QueryInterface(IAudioEndpointVolume)
 
 def calcular_centro(esquinas):
     filas= esquinas[:, 0]
     columnas = esquinas[:, 1]
 
-    xc = int(np.mean(filas)) #mean calcula el promedio de los valores
+    xc = int(np.mean(filas)) #mean calcula el promedio de los valores 
     yc = int(np.mean(columnas))
     return (xc, yc)
+def set_system_volume(porcentaje):
+    escalar = np.clip(porcentaje/ 100.0, 0.0, 1.0)
+    volume_control.SetMasterVolumeLevelScalar(escalar, None)
 
 
 aruco_dict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_6X6_250) #diccionario de aruco
@@ -27,7 +34,6 @@ if not cap.isOpened():
     print("No se pudo acceder a la cámara.")
     exit()
 
-
 while True:
     ret, frame = cap.read()
     if not ret:
@@ -35,6 +41,7 @@ while True:
         break
 
     esquinas, ids, rechazados = detector.detectMarkers(frame) #detecta los marcadores de aruco en el cuadro de la camara
+    #los ptints eran pasa saber si funcionaba xd
     if ids is not None:
         cv2.aruco.drawDetectedMarkers(frame, esquinas, ids)
 
@@ -44,7 +51,7 @@ while True:
         for i, id in enumerate(lista_numeros):
             centro = calcular_centro(esquinas[i][0])
             centros[id] = centro
-        #print(centros)
+        #print(centros)  
         #print(esquinas)
         if 0 in centros and 1 in centros and 2 in centros:
             x0, y0 = centros[0]
@@ -56,20 +63,23 @@ while True:
             
             divisiones=[]
             distancias=[]
-            for j in range(0, 7):
-                punto=(int(x0 + (x1 - x0) * j / 6), int(y0 + (y1 - y0) * j / 7))
+            for j in range(0, 6):
+                punto=(int(x0 + (x1 - x0) * (j / 5)), int(y0 + (y1 - y0) * (j / 5)))
                 #print(f"punto: {punto}")
                 divisiones.append(punto)
                 distancias.append(np.sqrt((punto[0] - x2) ** 2 + (punto[1] - y2) ** 2))
 
-            for punto, distancia in zip(divisiones, distancias):
+            min_distancia = min(distancias)
+            posicion_min = int(np.argmin(distancias))
+            for punto, distancia in (zip(divisiones, distancias)):
                 cv2.circle(frame, punto, 7, (0, 0, 255), -1)
-                if distancia == min(distancias):
+                if distancia == min_distancia:
                     cv2.line(frame, punto, (x2, y2), (0, 0, 255), 2)
                 else:
                     cv2.line(frame, punto, (x2, y2), (0, 255, 0), 2)
             #print(divisiones)
-
+            porcentaje = (posicion_min/ len(divisiones)) * 100
+            set_system_volume(porcentaje)
 
     cv2.imshow('Mi Camara', frame) #imagen de la camara
 
