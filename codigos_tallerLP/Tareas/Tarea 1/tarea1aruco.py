@@ -55,13 +55,19 @@ while True:
             #print(f"Distancia: {distancia:.2f} píxeles")
             
             divisiones=[]
+            distancias=[]
             for j in range(0, 7):
                 punto=(int(x0 + (x1 - x0) * j / 6), int(y0 + (y1 - y0) * j / 7))
                 #print(f"punto: {punto}")
                 divisiones.append(punto)
+                distancias.append(np.sqrt((punto[0] - x2) ** 2 + (punto[1] - y2) ** 2))
 
+            for punto, distancia in zip(divisiones, distancias):
                 cv2.circle(frame, punto, 7, (0, 0, 255), -1)
-                cv2.line(frame, punto, (x2, y2), (0, 255, 0), 2)
+                if distancia == min(distancias):
+                    cv2.line(frame, punto, (x2, y2), (0, 0, 255), 2)
+                else:
+                    cv2.line(frame, punto, (x2, y2), (0, 255, 0), 2)
             #print(divisiones)
 
 
